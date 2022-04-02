@@ -1,0 +1,9 @@
+config.py
+*.pem
+env*/*
+screenlog*
+.vscode/
+.micropy/
+micropy.json
+venv/
+pymakr.conf
