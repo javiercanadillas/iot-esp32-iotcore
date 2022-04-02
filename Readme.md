@@ -42,6 +42,10 @@ Source the `env.sh` file so we can connect to our board:
 source env.sh
 ```
 
+The configuration flow of the whole lab will be something like this:
+
+![Main Diagram](img/main_diagram.png)
+
 ## Preparing the device configuration
 
 ### Hardware configuration
