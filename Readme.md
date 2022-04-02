@@ -1,4 +1,4 @@
-# Getting started with Cloud IoT Core, the ESP32 and MicroPython
+# Getting started with Cloud IoT Core and the ESP32 running MicroPython
 
 
 This lab shows how to code and configure and end to end IoT example with Cloud IoT Core, ESP32 device, some basic electronic components and MicroPython. It is heavily based on [MicroPython Example with IoT Core](https://github.com/GoogleCloudPlatform/iot-core-micropython), that at the same time incorporate parts from [TrackingPrototype](https://github.com/jbrichau/TrackingPrototype).
