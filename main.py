@@ -34,7 +34,9 @@ def on_message(topic, message):
     print((topic,message))
 
 def connect():
-    """ Establishes WLAN connectivity on boot"""
+    """
+    Establishes WLAN connectivity on boot
+    """
     wlan.active(True)
     if not wlan.isconnected():
         print('connecting to network...')
@@ -45,7 +47,9 @@ def connect():
     print(f'network config: {wlan.ifconfig()}')
 
 def set_time():
-    """ Set local time in the MCU"""
+    """
+    Set local time in the MCU
+    """
     ntptime.settime()
     tm = utime.localtime()
     tm = tm[0:3] + (0,) + tm[3:6] + (0,)
@@ -53,13 +57,15 @@ def set_time():
     print(f'current time: {utime.localtime()}')
 
 def b42_urlsafe_encode(payload):
-    """ TODO
+    """
+    Encodes the URL in URL safe escape characters
     """
     # Translating the dashes and underscores in the payload
     return string.translate(b2a_base64(payload)[:-1].decode('utf-8'),{ ord('+'):'-', ord('/'):'_' })
 
 def create_jwt(project_id, private_key, algorithm, token_ttl):
-    """ Creates and signs JWT token required by IoT Core 
+    """
+    Creates and signs JWT token required by IoT Core 
     """
     print("Creating JWT...")
     private_key = rsa.PrivateKey(*private_key)
@@ -83,8 +89,10 @@ def create_jwt(project_id, private_key, algorithm, token_ttl):
     return content+ '.' + signature #signed JWT
 
 def get_mqtt_client(project_id, cloud_region, registry_id, device_id, jwt):
-    """Create our MQTT client. The client_id is a unique string that identifies
-    this device. For Google Cloud IoT Core, it must be in the format below."""
+    """
+    Create our MQTT client. The client_id is a unique string that identifies
+    this device. For Google Cloud IoT Core, it must be in the format below.
+    """
     client_id = f'projects/{project_id}/locations/{cloud_region}/registries/{registry_id}/devices/{device_id}'
     print(f'Sending message with password {jwt}')
     client = MQTTClient(
@@ -117,6 +125,7 @@ client = get_mqtt_client(
     config.google_cloud_config['device_id'],
     jwt)
 
+# Main loop
 while True:
     message = {
         "device_id": config.google_cloud_config['device_id'],
