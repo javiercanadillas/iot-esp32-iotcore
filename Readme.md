@@ -44,7 +44,9 @@ source env.sh
 
 The configuration flow of the whole lab will be something like this:
 
-![Main Diagram](img/main_diagram.png)
+<p align="center">
+<img src="img/main_diagram.png">
+</p>
 
 ## Preparing the device configuration
 
