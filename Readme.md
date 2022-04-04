@@ -3,6 +3,13 @@
 
 This lab shows how to code and configure and end to end IoT example with Cloud IoT Core, ESP32 device, some basic electronic components and MicroPython. It is heavily based on [MicroPython Example with IoT Core](https://github.com/GoogleCloudPlatform/iot-core-micropython), that at the same time incorporate parts from [TrackingPrototype](https://github.com/jbrichau/TrackingPrototype).
 
+
+The configuration flow of the whole lab follows this diagram:
+
+<p align="center">
+<img src="img/main_diagram.png">
+</p>
+
 ## Bill of materials
 
 - A development environment with direct USB access (your laptop)
@@ -41,12 +48,6 @@ Source the `env.sh` file so we can connect to our board:
 ```bash
 source env.sh
 ```
-
-The configuration flow of the whole lab will be something like this:
-
-<p align="center">
-<img src="img/main_diagram.png">
-</p>
 
 ## Preparing the device configuration
 
