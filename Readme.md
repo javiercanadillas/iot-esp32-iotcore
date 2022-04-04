@@ -167,8 +167,9 @@ or going to the [Google Cloud Console](https://console.cloud.google.com/iot/regi
 The SHT3x library is included in the `third_party` directory. Let's try to send data from this sensor to the Cloud following the next steps:
 
 1. Import the library into your code
-2. Initialize the sensor instantiating the sensor class
-3. Call the proper method of the sensor object to get temperature and data
+1. Initialize the communication bus (you may have a look at the sample code we used in our labs in previous classes to see how to do this)
+2. Initialize the sensor instantiating the sensor class and passing the bus you initialized in the previous step
+3. Call the proper method of the sensor object to get temperature and data, using clock stretching
 4. Modify the MQTT message to send both temperature and data to Cloud IoT Core
 
 ### Sending commands to the device
